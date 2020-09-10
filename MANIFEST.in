@@ -1,0 +1,6 @@
+include nomad_sources/CMakeLists.txt
+recursive-include nomad_sources/src *
+recursive-include nomad_sources/ext *
+recursive-include nomad_sources/sgtelib *
+recursive-include nomad_sources/sgtelib/src *
+recursive-include src/codegen *
