@@ -137,6 +137,11 @@ class build_ext_nomad(build_ext):
 #                     sources=[os.path.join(current_dir, 'src', 'PyNomad.pyx')] + source_files,
 #                     extra_compile_args=['-w'])
 
+
+# fix compiler
+os.environ['CC'] = "gcc"
+os.environ['CXX'] = "g++"
+
 setup(name='PyNomad',
       version='0.0.1',
       description='A Cython wrapper to the Nomad optimization software',
