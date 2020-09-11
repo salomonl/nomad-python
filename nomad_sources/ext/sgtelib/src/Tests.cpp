@@ -248,12 +248,12 @@ std::string SGTELIB::test_quick (const std::string & s , const SGTELIB::Matrix &
   std::cout << oss.str();
 
   for (int j=0 ; j<m ; j++){
-    if ( (std::isnan(emax[j])) || (isnan(rmsecv[j])) || (isnan(oe[j])) || (isnan(oecv[j])) || (isnan(linv[j])) ){
+    if ( (std::isnan(emax[j])) || (std::isnan(rmsecv[j])) || (std::isnan(oe[j])) || (std::isnan(oecv[j])) || (std::isnan(linv[j])) ){
       std::cout << "There is some nan\n";
       std::cout << "EXIT!\n"; 
       exit(0);
     }
-    if ( (std::isinf(emax[j])) || (isinf(rmse[j])) || ( isinf(rmsecv[j])) || (isinf(oe[j])) || (isinf(oecv[j])) || (isinf(linv[j])) ){
+    if ( (std::isinf(emax[j])) || (std::isinf(rmse[j])) || ( std::isinf(rmsecv[j])) || (std::isinf(oe[j])) || (std::isinf(oecv[j])) || (std::isinf(linv[j])) ){
       std::cout << "There is some inf\n";
       std::cout << "EXIT!\n"; 
       exit(0);
