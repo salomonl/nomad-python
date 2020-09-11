@@ -897,7 +897,7 @@ bool SGTELIB::Surrogate::compute_metric ( const metric_t mt ){
   // Check bounds.
   for (j=0; j<vector_size ; j++){
     m = v[j];
-    if (isnan(m)    ){ m = SGTELIB::INF; }
+    if (std::isnan(m)    ){ m = SGTELIB::INF; }
     if (m < -EPSILON){ m = SGTELIB::INF; }
     if (m <= 0.0    ){ m = 0.0; }
     v.set(0,j,m);
@@ -1594,8 +1594,8 @@ double SGTELIB::Surrogate::eval_objective ( void ){
     metric = get_metric(mt,0);
   }
 
-  if ( isnan(metric) ) return +INF;
-  if ( isinf(metric) ) return +INF;
+  if ( std::isnan(metric) ) return +INF;
+  if ( std::isinf(metric) ) return +INF;
   return metric;
 
 }//

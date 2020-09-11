@@ -35,9 +35,9 @@
 #ifdef _MSC_VER
 #pragma warning(disable:4996)
 #include <io.h>
-#define isnan(x) _isnan(x)
+#define std::isnan(x) _isnan(x)
 #define isdigit(x) _isdigit(x)
-#define isinf(x) (!_finite(x))
+#define std::isinf(x) (!_finite(x))
 
 typedef struct timeval {
      long tv_sec;

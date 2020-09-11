@@ -248,12 +248,12 @@ std::string SGTELIB::test_quick (const std::string & s , const SGTELIB::Matrix &
   std::cout << oss.str();
 
   for (int j=0 ; j<m ; j++){
-    if ( (isnan(emax[j])) || (isnan(rmsecv[j])) || (isnan(oe[j])) || (isnan(oecv[j])) || (isnan(linv[j])) ){
+    if ( (std::isnan(emax[j])) || (isnan(rmsecv[j])) || (isnan(oe[j])) || (isnan(oecv[j])) || (isnan(linv[j])) ){
       std::cout << "There is some nan\n";
       std::cout << "EXIT!\n"; 
       exit(0);
     }
-    if ( (isinf(emax[j])) || (isinf(rmse[j])) || ( isinf(rmsecv[j])) || (isinf(oe[j])) || (isinf(oecv[j])) || (isinf(linv[j])) ){
+    if ( (std::isinf(emax[j])) || (isinf(rmse[j])) || ( isinf(rmsecv[j])) || (isinf(oe[j])) || (isinf(oecv[j])) || (isinf(linv[j])) ){
       std::cout << "There is some inf\n";
       std::cout << "EXIT!\n"; 
       exit(0);
@@ -1386,19 +1386,19 @@ void SGTELIB::check_matrix_diff(const SGTELIB::Matrix * A, const SGTELIB::Matrix
         eij = true;
         std::cout << "diff is too big !\n";
       }
-      if (isnan(va)){
+      if (std::isnan(va)){
         eij = true;
         std::cout << "va is nan !\n";
       }
-      if (isnan(vb)){
+      if (std::isnan(vb)){
         eij = true;
         std::cout << "vb is nan !\n";
       }
-      if (isinf(va)){
+      if (std::isinf(va)){
         eij = true;
         std::cout << "va is inf !\n";
       }
-      if (isinf(vb)){
+      if (std::isinf(vb)){
         eij = true;
         std::cout << "vb is inf !\n";
       }
