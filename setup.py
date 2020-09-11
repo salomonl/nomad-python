@@ -100,6 +100,10 @@ class build_ext_nomad(build_ext):
         except OSError:
             raise RuntimeError("CMake must be installed to build Nomad")
 
+        # fix compiler
+        os.environ['CC'] = "gcc"
+        os.environ['CXX'] = "g++"
+
         # Compile static library with CMake
         subprocess.call(['cmake'] + ['..'])
         subprocess.call(['cmake', '--build', '.'])
