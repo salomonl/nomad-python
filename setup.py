@@ -125,29 +125,16 @@ class build_ext_nomad(build_ext):
         build_ext.build_extensions(self)
 
 
-#  _nomad = Extension('PyNomad',
-#                     define_macros=[],
-#                     language='c++',
-#                     libraries=['nomad'],
-#                     library_dirs=[os.path.join(nomad_codegen_sources_dir, 'bin')],
-#                     include_dirs=[os.path.join(nomad_codegen_sources_dir, 'src'),
-#                                   os.path.join(nomad_codegen_sources_dir, 'ext', 'sgtelib', 'src'),
-#                                   np.get_include()],
-#                     extra_objects=[os.path.join(current_dir, 'src')],
-#                     sources=[os.path.join(current_dir, 'src', 'PyNomad.pyx')] + source_files,
-#                     extra_compile_args=['-w'])
-
-
 # fix compiler
 os.environ['CC'] = "gcc"
 os.environ['CXX'] = "g++"
 
-setup(name='PyNomad',
+setup(name='nomadsolver',
       version='0.0.1',
       description='A Cython wrapper to the Nomad optimization software',
-      package_dir = {'PyNomad' : 'src'},
+      package_dir = {'nomadsolver' : 'src'},
       setup_requires=['numpy', 'cython', 'setuptools'],
-      packages=['PyNomad'],
+      packages=['nomadsolver'],
       cmdclass={'build_ext': build_ext_nomad},
       ext_modules=cythonize(Extension(
           "PyNomad",

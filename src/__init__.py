@@ -1,1 +1,1 @@
-from PyNomad import *
+from PyNomad import optimize
